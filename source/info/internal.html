@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="ja" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>内部処理について &mdash; Chronicliner 2.0.0 ドキュメント</title>
@@ -12,10 +12,10 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/translations.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
@@ -28,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Chronicliner
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Chronicliner
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -105,8 +109,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>内部処理について</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">内部処理について</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/source/info/internal.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -117,7 +121,7 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>内部処理について<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<h1>内部処理について<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>このページは <strong>Chroniclinerに謎の動作をされて困っているJavaScriptがわかる人</strong> 、 <strong>単純に中身が知りたいJavaScriptのわかる物好き</strong> 、 <strong>GitHub Contributor</strong> 向けです</p>
@@ -127,44 +131,44 @@
 <p>不明点の問い合わせについては <a class="reference internal" href="../../index.html#contact"><span class="std std-ref">Contact</span></a> も併せてご参照ください</p>
 </div>
 <section id="id2">
-<h2>1. 概要<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<h2>1. 概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク"></a></h2>
 <p>Chronicliner v2.0.0は、Vueフレームワーク上で動作しています。Vueの基本的な仕様については、 <a class="reference external" href="https://jp.vuejs.org/">Vue.jsドキュメント</a> を参照してください。</p>
 <p>また、UI（CSS styling）はVuetify.jsを使用しています。Vuetify.js特有のHTMLタグや属性については、 <a class="reference external" href="https://vuetifyjs.com/ja/">Vuetify.jsドキュメント</a> を参照してください。</p>
 </section>
 <section id="id3">
-<h2>2. ファイル指定時の処理<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h2>
+<h2>2. ファイル指定時の処理<a class="headerlink" href="#id3" title="この見出しへのパーマリンク"></a></h2>
 <section id="readfile">
-<h3>2.1. ファイル読み込み -&gt; <code class="docutils literal notranslate"><span class="pre">readFile()</span></code><a class="headerlink" href="#readfile" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>2.1. ファイル読み込み -&gt; <code class="docutils literal notranslate"><span class="pre">readFile()</span></code><a class="headerlink" href="#readfile" title="この見出しへのパーマリンク"></a></h3>
 <p><a class="reference external" href="https://sheetjs.com/">SheetJS</a> ライブラリを用い、指定されたエクセルファイルの読み込みを行います。読み込み後、処理に必要なシート・列が存在するかを検証し、存在しない場合はエラーを返します。</p>
 </section>
 <section id="init">
-<h3>2.2. データの作成 -&gt; <code class="docutils literal notranslate"><span class="pre">init()</span></code><a class="headerlink" href="#init" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>2.2. データの作成 -&gt; <code class="docutils literal notranslate"><span class="pre">init()</span></code><a class="headerlink" href="#init" title="この見出しへのパーマリンク"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">readFile()</span></code> 関数でファイルが読み込まれたことをVueが検知し、自動で <code class="docutils literal notranslate"><span class="pre">init()</span></code> を呼び出します。 <code class="docutils literal notranslate"><span class="pre">init()</span></code> 関数は各ステータス変数の更新と各シートのデータの読み込み・フォーマット、年表用データの作成を行います。</p>
 <section id="id4">
-<h4>2.2.1. 各ステータス変数の更新<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h4>
+<h4>2.2.1. 各ステータス変数の更新<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h4>
 <p>データ処理中かどうか、データ処理が完了したか、エラーメッセージ等の各ステータス変数を初期化・更新します。 <code class="docutils literal notranslate"><span class="pre">init()</span></code> 関数の終了時にも変数の更新を行います。</p>
 </section>
 <section id="formatdata">
-<h4>2.2.2. データの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">formatData()</span></code><a class="headerlink" href="#formatdata" title="このヘッドラインへのパーマリンク"></a></h4>
+<h4>2.2.2. データの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">formatData()</span></code><a class="headerlink" href="#formatdata" title="この見出しへのパーマリンク"></a></h4>
 <p>カテゴリー、教育課程、キャラクター、キャラクターの所属教育課程、期間イベント、イベント、サマリーの順に処理を行います。</p>
 <section id="createcategory">
-<h5>2.2.2.1. カテゴリデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createCategory()</span></code><a class="headerlink" href="#createcategory" title="このヘッドラインへのパーマリンク"></a></h5>
+<h5>2.2.2.1. カテゴリデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createCategory()</span></code><a class="headerlink" href="#createcategory" title="この見出しへのパーマリンク"></a></h5>
 <p>カテゴリのデータを読み込み、カテゴリ名をキーとする辞書形式にフォーマットします。</p>
 </section>
 <section id="createcharacter">
-<h5>2.2.2.2. キャラクタデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createCharacter()</span></code><a class="headerlink" href="#createcharacter" title="このヘッドラインへのパーマリンク"></a></h5>
+<h5>2.2.2.2. キャラクタデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createCharacter()</span></code><a class="headerlink" href="#createcharacter" title="この見出しへのパーマリンク"></a></h5>
 <p>キャラクタのデータを読み込み、キャラクタ名をキーとする辞書形式にフォーマットします。</p>
 </section>
 <section id="createcharacterschoolinfo">
-<h5>2.2.2.3. 教育課程データの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createCharacterSchoolInfo()</span></code><a class="headerlink" href="#createcharacterschoolinfo" title="このヘッドラインへのパーマリンク"></a></h5>
+<h5>2.2.2.3. 教育課程データの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createCharacterSchoolInfo()</span></code><a class="headerlink" href="#createcharacterschoolinfo" title="この見出しへのパーマリンク"></a></h5>
 <p>教育課程のデータを読み込み、所属開始日・終了日・学年計算起算日等を算出、 <code class="docutils literal notranslate"><span class="pre">createCharacter()</span></code> で作成したキャラクタの辞書に格納します。誕生年自動計算を <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> に設定していた場合、ここでキャラクタの誕生年の更新を行います。</p>
 </section>
 <section id="createperiodevent">
-<h5>2.2.2.4. 期間イベントデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createPeriodEvent()</span></code><a class="headerlink" href="#createperiodevent" title="このヘッドラインへのパーマリンク"></a></h5>
+<h5>2.2.2.4. 期間イベントデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createPeriodEvent()</span></code><a class="headerlink" href="#createperiodevent" title="この見出しへのパーマリンク"></a></h5>
 <p>期間イベントのデータを読み込み、キャラクタ名をキーとする辞書形式にフォーマットします。また、開始・終了イベントのデータを作成します。</p>
 </section>
 <section id="createevent">
-<h5>2.2.2.5. イベントデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createEvent()</span></code><a class="headerlink" href="#createevent" title="このヘッドラインへのパーマリンク"></a></h5>
+<h5>2.2.2.5. イベントデータの読み込み・フォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createEvent()</span></code><a class="headerlink" href="#createevent" title="この見出しへのパーマリンク"></a></h5>
 <p><code class="docutils literal notranslate"><span class="pre">createCharacterBirthday()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">createCharacterDeathday()</span></code> 関数を呼び出し、キャラクタの誕生日・死亡日データを作成します。その後、作成した誕生日・死亡日イベント、及び <code class="docutils literal notranslate"><span class="pre">createPeriodEvent()</span></code> で作成した開始・終了イベントのデータ、読み込んだイベントのデータを、イベント日時、以下を無視、以前以降の設定値によって決定する値をキーとする辞書形式にフォーマットします。</p>
 <p><strong>イベント辞書のキーの設定値</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">{yyyy-MM-dd}T{hh:mm:ss}+09:00{以下を無視}{以前以降}</span></code></p>
@@ -174,57 +178,57 @@
 </ul>
 </section>
 <section id="createyearsummary">
-<h5>2.2.2.6. サマリーデータのフォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createYearSummary()</span></code><a class="headerlink" href="#createyearsummary" title="このヘッドラインへのパーマリンク"></a></h5>
+<h5>2.2.2.6. サマリーデータのフォーマット -&gt; <code class="docutils literal notranslate"><span class="pre">createYearSummary()</span></code><a class="headerlink" href="#createyearsummary" title="この見出しへのパーマリンク"></a></h5>
 <p><code class="docutils literal notranslate"><span class="pre">createEvent()</span></code> で作成したイベント辞書のキーから、存在する年をキーとする辞書を作成します。ここではデータの初期設定のみを行い、イベント件数の集計は行いません。</p>
 </section>
 </section>
 <section id="selectallcharactersincategory">
-<h4>2.2.3. キャラクターの選択状態の変更 -&gt; <code class="docutils literal notranslate"><span class="pre">selectAllCharactersInCategory()</span></code><a class="headerlink" href="#selectallcharactersincategory" title="このヘッドラインへのパーマリンク"></a></h4>
+<h4>2.2.3. キャラクターの選択状態の変更 -&gt; <code class="docutils literal notranslate"><span class="pre">selectAllCharactersInCategory()</span></code><a class="headerlink" href="#selectallcharactersincategory" title="この見出しへのパーマリンク"></a></h4>
 <p>各カテゴリごとにforEachループを回し、存在するキャラクター全員を選択状態にします。この処理の結果、Vueはキャラクターの選択状態の変更を検知し <code class="docutils literal notranslate"><span class="pre">update()</span></code> を呼び出します。</p>
 </section>
 <section id="createtimelinedata">
-<h4>2.2.4. テーブルデータ作成 -&gt; <code class="docutils literal notranslate"><span class="pre">createTimelineData()</span></code><a class="headerlink" href="#createtimelinedata" title="このヘッドラインへのパーマリンク"></a></h4>
+<h4>2.2.4. テーブルデータ作成 -&gt; <code class="docutils literal notranslate"><span class="pre">createTimelineData()</span></code><a class="headerlink" href="#createtimelinedata" title="この見出しへのパーマリンク"></a></h4>
 <p>イベント辞書のキーを昇順にソートし、年表の表示行順に処理を行います。年表示列の設定と各キャラクタのタイムライン列・イベントカード列に対するイベントデータ・教育課程データの紐付けを行います。</p>
 <p>また、キャラクターごとにイベント件数の集計を行います。</p>
 </section>
 <section id="updateyearsummary">
-<h4>2.2.5. サマリーデータの更新 -&gt; <code class="docutils literal notranslate"><span class="pre">updateYearSummary()</span></code><a class="headerlink" href="#updateyearsummary" title="このヘッドラインへのパーマリンク"></a></h4>
+<h4>2.2.5. サマリーデータの更新 -&gt; <code class="docutils literal notranslate"><span class="pre">updateYearSummary()</span></code><a class="headerlink" href="#updateyearsummary" title="この見出しへのパーマリンク"></a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">createTimelineData()</span></code> で集計したイベント件数をもとに、サマリーカードに表示する文章を更新します。</p>
 </section>
 <section id="updatetimelinedata">
-<h4>2.2.6. テーブルデータ更新 -&gt; <code class="docutils literal notranslate"><span class="pre">updateTimelineData()</span></code><a class="headerlink" href="#updatetimelinedata" title="このヘッドラインへのパーマリンク"></a></h4>
+<h4>2.2.6. テーブルデータ更新 -&gt; <code class="docutils literal notranslate"><span class="pre">updateTimelineData()</span></code><a class="headerlink" href="#updatetimelinedata" title="この見出しへのパーマリンク"></a></h4>
 <p>キャラクターの選択状態、及び年の展開状態に応じ、行表示状態の設定と年齢変更・生存・死亡状態による矢印の色及び区切り線の表示設定を行います。</p>
 </section>
 </section>
 </section>
 <section id="update">
-<h2>3. 表示設定変更・年折りたたみ時の処理 -&gt; <code class="docutils literal notranslate"><span class="pre">update()</span></code><a class="headerlink" href="#update" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>キャラクター表示設定の変更時はVueが変更を自動検知、年折りたたみ時は <code class="docutils literal notranslate"><span class="pre">&#64;click</span></code> により、更新処理のための関数を呼び出します。</p>
+<h2>3. 表示設定変更・年折りたたみ時の処理 -&gt; <code class="docutils literal notranslate"><span class="pre">update()</span></code><a class="headerlink" href="#update" title="この見出しへのパーマリンク"></a></h2>
+<p>キャラクター表示設定の変更時はVueが変更を自動検知、タグ表示設定の変更時と年折りたたみ時は <code class="docutils literal notranslate"><span class="pre">&#64;click</span></code> により、更新処理のための関数を呼び出します。</p>
 <section id="id5">
-<h3>3.1. テーブルヘッダーデータの作成 -&gt; <code class="docutils literal notranslate"><span class="pre">createTimelineData()</span></code><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>3.1. テーブルヘッダーデータの作成 -&gt; <code class="docutils literal notranslate"><span class="pre">createTimelineData()</span></code><a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h3>
 <p>キャラクターの選択状態に応じ、表示する列のデータを作成します。これにより、非選択状態のキャラクターのデータは非表示になります。</p>
 </section>
 <section id="id6">
-<h3>3.2. テーブルデータの更新 -&gt; <code class="docutils literal notranslate"><span class="pre">updateTimelineData()</span></code><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>3.2. テーブルデータの更新 -&gt; <code class="docutils literal notranslate"><span class="pre">updateTimelineData()</span></code><a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h3>
 <p>キャラクターの選択状態、及び年の展開状態に応じ、行表示状態の設定と年齢変更・生存・死亡状態による矢印の色及び区切り線の表示設定を行います。</p>
 </section>
 <section id="setarrowfirstdied">
-<h3>3.3. キャラクター死亡後のタイムライン列矢印の設定 -&gt; <code class="docutils literal notranslate"><span class="pre">setArrowFirstDied()</span></code><a class="headerlink" href="#setarrowfirstdied" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>3.3. キャラクター死亡後のタイムライン列矢印の設定 -&gt; <code class="docutils literal notranslate"><span class="pre">setArrowFirstDied()</span></code><a class="headerlink" href="#setarrowfirstdied" title="この見出しへのパーマリンク"></a></h3>
 <p>キャラクター死亡後最初の表示行にある矢印のsvg画像の色を、キャラクターのカテゴリに設定された色に変更します。</p>
 </section>
 <section id="setinnertdheight">
-<h3>3.4. タイムライン列ホバーの当たり判定領域拡張 -&gt; <code class="docutils literal notranslate"><span class="pre">setInnerTdHeight()</span></code><a class="headerlink" href="#setinnertdheight" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>3.4. タイムライン列ホバーの当たり判定領域拡張 -&gt; <code class="docutils literal notranslate"><span class="pre">setInnerTdHeight()</span></code><a class="headerlink" href="#setinnertdheight" title="この見出しへのパーマリンク"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">this.$nextTick(function(){FUNCTION})</span></code> を使用し、その他のDOM要素を更新後、タイムライン列の当たり判定に使用している <code class="docutils literal notranslate"><span class="pre">&lt;v-sheet&gt;</span></code> の <code class="docutils literal notranslate"><span class="pre">height</span></code> を親要素の <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> の <code class="docutils literal notranslate"><span class="pre">height</span></code> と同じ高さまで拡張します。</p>
 </section>
 </section>
 <section id="id7">
-<h2>4. ウィンドウサイズ変更時の処理<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h2>
+<h2>4. ウィンドウサイズ変更時の処理<a class="headerlink" href="#id7" title="この見出しへのパーマリンク"></a></h2>
 <section id="mounted-beforedestroy">
-<h3>4.1. 初期設定 -&gt; <code class="docutils literal notranslate"><span class="pre">mounted</span></code> / <code class="docutils literal notranslate"><span class="pre">beforeDestroy</span></code><a class="headerlink" href="#mounted-beforedestroy" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>4.1. 初期設定 -&gt; <code class="docutils literal notranslate"><span class="pre">mounted</span></code> / <code class="docutils literal notranslate"><span class="pre">beforeDestroy</span></code><a class="headerlink" href="#mounted-beforedestroy" title="この見出しへのパーマリンク"></a></h3>
 <p>DOM要素のマウント時、 <code class="docutils literal notranslate"><span class="pre">window.addEventListener('resize',</span> <span class="pre">this.windowResized);</span></code> でウィンドウサイズの変更を検知するように設定してします。DOM要素破棄時には <code class="docutils literal notranslate"><span class="pre">window.addRemoveListener('resize',</span> <span class="pre">this.windowResized);</span></code> でイベントリスナーを破棄します。</p>
 </section>
 <section id="windowresized">
-<h3>4.2. イベント発生時 -&gt; <code class="docutils literal notranslate"><span class="pre">windowResized()</span></code><a class="headerlink" href="#windowresized" title="このヘッドラインへのパーマリンク"></a></h3>
+<h3>4.2. イベント発生時 -&gt; <code class="docutils literal notranslate"><span class="pre">windowResized()</span></code><a class="headerlink" href="#windowresized" title="この見出しへのパーマリンク"></a></h3>
 <p>変更された <code class="docutils literal notranslate"><span class="pre">window.innerHeight</span></code> と各要素の <code class="docutils literal notranslate"><span class="pre">padding</span></code> 、及び <code class="docutils literal notranslate"><span class="pre">getBoundingClientRect().y</span></code> で取得できる年表の上端座標からアプリケーションが画面内に収まる高さの最大値を算出し、年表テーブルの <code class="docutils literal notranslate"><span class="pre">height</span></code> を書き換えます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
