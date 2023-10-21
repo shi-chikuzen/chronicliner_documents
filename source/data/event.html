@@ -66,11 +66,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#limit">以下を無視</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#beforeafter">以前 / 以降</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#detail">詳細</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#impev">重要イベント</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tagev">タグ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">2. 特記事項</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id12">各設定値によるイベント並び順について</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">3. 特記事項</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">各設定値によるイベント並び順について</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +162,13 @@
 <td><p>イベントの詳細を設定する</p></td>
 <td><p>場所：ホグワーツ</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tagev"><span class="std std-ref">タグ</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#impev"><span class="std std-ref">重要イベント</span></a></p></td>
+<td><p>任意</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TRUE</span></code> 、 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></td>
+<td><p>重要イベントハイライトモードでハイライトするかを設定する</p></td>
+<td><p>TRUE</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tagev"><span class="std std-ref">タグ</span></a></p></td>
 <td><p>任意</p></td>
 <td><p>文字列（ <code class="docutils literal notranslate"><span class="pre">#</span></code> 区切り）</p></td>
 <td><p>イベントのタグを設定する</p></td>
@@ -246,15 +253,20 @@
 <span id="id9"></span><h3>詳細<a class="headerlink" href="#detail" title="この見出しへのパーマリンク"></a></h3>
 <p>該当イベントの詳細情報を設定します。なお、セル内での改行はイベントカードに反映されます。</p>
 </section>
+<section id="impev">
+<span id="id10"></span><h3>重要イベント<a class="headerlink" href="#impev" title="この見出しへのパーマリンク"></a></h3>
+<p>該当のイベントを重要イベントに設定します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">TRUE</span></code> を設定していないイベントは、重要イベントハイライトモードに切り替えた際に薄めの色で表示されます。</p>
+</section>
 <section id="tagev">
-<span id="id10"></span><h3>タグ<a class="headerlink" href="#tagev" title="この見出しへのパーマリンク"></a></h3>
+<span id="id11"></span><h3>タグ<a class="headerlink" href="#tagev" title="この見出しへのパーマリンク"></a></h3>
 <p>該当イベントのタグを設定します。半角の <code class="docutils literal notranslate"><span class="pre">#</span></code> をつけた形式で記載してください。</p>
 </section>
 </section>
-<section id="id11">
-<h2>2. 特記事項<a class="headerlink" href="#id11" title="この見出しへのパーマリンク"></a></h2>
 <section id="id12">
-<h3>各設定値によるイベント並び順について<a class="headerlink" href="#id12" title="この見出しへのパーマリンク"></a></h3>
+<h2>3. 特記事項<a class="headerlink" href="#id12" title="この見出しへのパーマリンク"></a></h2>
+<section id="id13">
+<h3>各設定値によるイベント並び順について<a class="headerlink" href="#id13" title="この見出しへのパーマリンク"></a></h3>
 <p>同一の <a class="reference internal" href="#date"><span class="std std-ref">日時</span></a> を指定した場合、イベントカードの並び順は <a class="reference internal" href="#categorye"><span class="std std-ref">カテゴリ</span></a> 、 <a class="reference internal" href="#limit"><span class="std std-ref">以下を無視</span></a> 、 <a class="reference internal" href="#beforeafter"><span class="std std-ref">以前 / 以降</span></a> の設定に依存します。詳細は以下の表を参照してください。</p>
 <table class="docutils align-default">
 <thead>

@@ -69,6 +69,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#display">経過時間粒度</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#startdetail">開始時詳細</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enddetail">終了時詳細</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#impevp">重要イベント</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tagevperiod">タグ</a></li>
 </ul>
 </li>
@@ -171,7 +172,13 @@
 <td><p>期間イベント終了イベントの詳細を設定する</p></td>
 <td><p>場所：ホグワーツ</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tagevperiod"><span class="std std-ref">タグ</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#impevp"><span class="std std-ref">重要イベント</span></a></p></td>
+<td><p>任意</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TRUE</span></code> 、 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></td>
+<td><p>重要イベントハイライトモードでハイライトするかを設定する</p></td>
+<td><p>TRUE</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tagevperiod"><span class="std std-ref">タグ</span></a></p></td>
 <td><p>任意</p></td>
 <td><p>文字列（ <code class="docutils literal notranslate"><span class="pre">#</span></code> 区切り）</p></td>
 <td><p>イベントのタグを設定する</p></td>
@@ -268,8 +275,13 @@
 <span id="id11"></span><h3>終了時詳細<a class="headerlink" href="#enddetail" title="この見出しへのパーマリンク"></a></h3>
 <p>該当期間イベント終了イベントの詳細情報を設定します。なお、セル内での改行はイベントカードに反映されます。</p>
 </section>
+<section id="impevp">
+<span id="id12"></span><h3>重要イベント<a class="headerlink" href="#impevp" title="この見出しへのパーマリンク"></a></h3>
+<p>該当のイベントを重要イベントに設定します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">TRUE</span></code> を設定していないイベントは、重要イベントハイライトモードに切り替えた際に薄めの色で表示されます。</p>
+</section>
 <section id="tagevperiod">
-<span id="id12"></span><h3>タグ<a class="headerlink" href="#tagevperiod" title="この見出しへのパーマリンク"></a></h3>
+<span id="id13"></span><h3>タグ<a class="headerlink" href="#tagevperiod" title="この見出しへのパーマリンク"></a></h3>
 <p>該当期間イベントのタグを設定します。半角の <code class="docutils literal notranslate"><span class="pre">#</span></code> をつけた形式で記載してください。</p>
 </section>
 </section>
