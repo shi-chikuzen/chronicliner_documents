@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>データ設定 &mdash; Chronicliner 2.0.0 ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="アップデート情報" href="../info/update.html" />
+    <link rel="prev" title="画面の各機能" href="ui.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Chronicliner
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../info/quickstart.html">クイックスタートガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/features.html">主な機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/require.html">動作要件・環境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/caution.html">注意・FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/ui.html">画面の各機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/autoevent.html">自動追加カード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/category.html">カテゴリ設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/character.html">キャラクター設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/school.html">教育課程設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/event.html">イベント設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/periodEvent.html">期間イベント設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/aboutErrors.html">データエラー対処法</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Character Database:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタートガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">画面の各機能</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">データ設定</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cdb-data">1. キャラクタ作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2. 設定可能データ形式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">3. 各データ形式の設定項目</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#captionc">キャプション</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#groupc">カテゴリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datec">日時</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datac">通常データ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#colorc">色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imgc">画像</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphc">レーダーチャート</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../info/update.html">アップデート情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/files.html">ファイル情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/internal.html">内部処理について</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/shi-chikuzen/chronicliner">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Chronicliner</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">データ設定</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/source/characterDatabase/data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>データ設定<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
+<section id="cdb-data">
+<span id="id2"></span><h2>1. キャラクタ作成<a class="headerlink" href="#cdb-data" title="この見出しへのパーマリンク"></a></h2>
+<p>Excelファイルのテンプレートシートを複製し、シート名を <code class="docutils literal notranslate"><span class="pre">{キャラクタ名}</span></code> に変更してください。</p>
+</section>
+<section id="id3">
+<h2>2. 設定可能データ形式<a class="headerlink" href="#id3" title="この見出しへのパーマリンク"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">{キャラクタ名}</span></code> を設定したシートに対し、以下の形式のデータを作成できます。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>データ形式</p></th>
+<th class="head"><p>使用可能な値</p></th>
+<th class="head"><p>複数設定</p></th>
+<th class="head"><p>比較表での表示可否</p></th>
+<th class="head"><p>概要</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#captionc"><span class="std std-ref">キャプション</span></a></p></td>
+<td><p>文字列</p></td>
+<td><p>不可</p></td>
+<td><p>不可</p></td>
+<td><p>キャラクター概要等の説明文</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#groupc"><span class="std std-ref">カテゴリ</span></a></p></td>
+<td><p>文字列</p></td>
+<td><p>不可</p></td>
+<td><p>不可</p></td>
+<td><p>キャラクタの所属するカテゴリなどの名前</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#datec"><span class="std std-ref">日時</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span> <span class="pre">hh:mm</span></code> 形式の日時、 <code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span></code> 形式の日付</p></td>
+<td><p>可</p></td>
+<td><p>可</p></td>
+<td><p>誕生日などキャラクタに関連する日時データ</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#datac"><span class="std std-ref">通常データ</span></a></p></td>
+<td><p>文字列・数値</p></td>
+<td><p>可</p></td>
+<td><p>可</p></td>
+<td><p>キャラクタに関連する通常形式のデータ</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#colorc"><span class="std std-ref">色</span></a></p></td>
+<td><p>カラーコード、RGB値</p></td>
+<td><p>可</p></td>
+<td><p>可</p></td>
+<td><p>キャラクタに関連する色データ</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imgc"><span class="std std-ref">画像</span></a></p></td>
+<td><p>ファイルパス（文字列）</p></td>
+<td><p>可</p></td>
+<td><p>不可</p></td>
+<td><p>キャラクタ画像などのデータ</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#graphc"><span class="std std-ref">レーダーチャート</span></a></p></td>
+<td><p>数値</p></td>
+<td><p>可</p></td>
+<td><p>可</p></td>
+<td><p>レーダーチャートに表示したいキャラクタに関連する数値データ</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>同一名称のキャラクタを複数人作成することはできません</p>
+</div>
+</section>
+<section id="id4">
+<h2>3. 各データ形式の設定項目<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h2>
+<section id="captionc">
+<span id="id5"></span><h3>キャプション<a class="headerlink" href="#captionc" title="この見出しへのパーマリンク"></a></h3>
+<p>キャラクタの簡易的な説明文等を設定するためのデータ形式です。
+エクセルシートの各列に以下の項目を設定します。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>データ型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">caption</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目名</p></td>
+<td><p>設定値なし</p></td>
+<td><p>設定しても反映されません</p></td>
+</tr>
+<tr class="row-even"><td><p>値</p></td>
+<td><p>キャプションの本文</p></td>
+<td><p>改行可能です</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>1キャラクタに複数のキャプションを設定することはできません</p>
+</div>
+</section>
+<section id="groupc">
+<span id="id6"></span><h3>カテゴリ<a class="headerlink" href="#groupc" title="この見出しへのパーマリンク"></a></h3>
+<p>キャラクタタブでキャラクタを分類する値を設定するためのデータ形式です。
+エクセルシートの各列に以下の項目を設定します。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>データ型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目名</p></td>
+<td><p>設定値なし</p></td>
+<td><p>設定しても反映されません</p></td>
+</tr>
+<tr class="row-even"><td><p>値</p></td>
+<td><p>カテゴリ名</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>1キャラクタに複数のカテゴリを設定することはできません</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ここで指定された値はキャラクタタブの分類用にのみ使用されます。表や比較に値を使用したい場合、別途 <a class="reference internal" href="#datac"><span class="std std-ref">通常データ</span></a> での登録も行ってください</p>
+</div>
+</section>
+<section id="datec">
+<span id="id7"></span><h3>日時<a class="headerlink" href="#datec" title="この見出しへのパーマリンク"></a></h3>
+<p>誕生日、死亡日、その他記念日等を設定するためのデータ形式です。
+エクセルシートの各列に以下の項目を設定します。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>データ型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目名</p></td>
+<td><p>任意のデータ項目名</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>値</p></td>
+<td><p>年月日以下の粒度のデータが必要ない場合は <code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span></code> 形式、必要な場合は <code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span> <span class="pre">hh:mm</span></code> 形式の任意の値</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>設定値の時間が <code class="docutils literal notranslate"><span class="pre">00:00</span></code> の場合は年月日まで、それ以外の場合は時分まで表示します</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Excelが自動で日付の表示形式を変更する（ <code class="docutils literal notranslate"><span class="pre">21-Jan</span></code> 等）ことがありますが、修正する必要はありません</p>
+</div>
+</section>
+<section id="datac">
+<span id="id8"></span><h3>通常データ<a class="headerlink" href="#datac" title="この見出しへのパーマリンク"></a></h3>
+<p>容姿、能力、その他通常のキャラクタ属性を設定するためのデータ形式です。
+エクセルシートの各列に以下の項目を設定します。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>データ型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目名</p></td>
+<td><p>任意のデータ項目名</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>値</p></td>
+<td><p>任意の文字列・数値</p></td>
+<td><p>日付形式を除く</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="colorc">
+<span id="id9"></span><h3>色<a class="headerlink" href="#colorc" title="この見出しへのパーマリンク"></a></h3>
+<p>キャラクタのテーマカラー、容姿に関連する色等の色データを設定するためのデータ形式です。エクセルシートの各列に以下の項目を設定します。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>データ型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目名</p></td>
+<td><p>任意のデータ項目名</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>値</p></td>
+<td><p>任意のカラーコード、RGB値</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>値では以下の書式が設定可能です。</p>
+<ul class="simple">
+<li><p>カラーコード - (ex: <code class="docutils literal notranslate"><span class="pre">#abcefg</span></code>)</p></li>
+<li><p>RGB形式 - (ex: <code class="docutils literal notranslate"><span class="pre">rgb(100,</span> <span class="pre">200,</span> <span class="pre">255)</span></code>)</p></li>
+</ul>
+</section>
+<section id="imgc">
+<span id="id10"></span><h3>画像<a class="headerlink" href="#imgc" title="この見出しへのパーマリンク"></a></h3>
+<p>キャラクタ画像等を設定するためのデータ形式です。
+エクセルシートの各列に以下の項目を設定します。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>データ型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">img</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目名</p></td>
+<td><p>設定値なし</p></td>
+<td><p>設定しても反映されません</p></td>
+</tr>
+<tr class="row-even"><td><p>値</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">app.html</span></code> があるフォルダをカレントディレクトリとした場合の相対パス</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>例えば、 <code class="docutils literal notranslate"><span class="pre">./data/img</span></code> フォルダにある <code class="docutils literal notranslate"><span class="pre">sample.png</span></code> を表示したい場合、値には <code class="docutils literal notranslate"><span class="pre">./data/img/sample.png</span></code> を設定します。
+パスが長くならない場所に画像データを格納することをおすすめしています。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ファイルサイズが大きいと処理が重くなります。</p>
+</div>
+</section>
+<section id="graphc">
+<span id="id11"></span><h3>レーダーチャート<a class="headerlink" href="#graphc" title="この見出しへのパーマリンク"></a></h3>
+<p>キャラクタの能力値など、レーダーチャートで表示したい数値項目を設定するためのデータ形式です。エクセルシートの各列に以下の項目を設定します。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>データ型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">chart</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目名</p></td>
+<td><p>任意の項目名</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>値</p></td>
+<td><p>任意の数値</p></td>
+<td><p>半角数字で入力してください</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ここで設定された値を使用し、グラフタブにレーダーチャートを作成します。項目が多くなりすぎるとグラフの視認性が悪くなる可能性があります。</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ui.html" class="btn btn-neutral float-left" title="画面の各機能" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../info/update.html" class="btn btn-neutral float-right" title="アップデート情報" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, shi_chikuzen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

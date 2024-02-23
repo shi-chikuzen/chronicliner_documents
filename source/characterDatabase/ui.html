@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>画面の各機能 &mdash; Chronicliner 2.0.0 ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="データ設定" href="data.html" />
+    <link rel="prev" title="クイックスタートガイド" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Chronicliner
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../info/quickstart.html">クイックスタートガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/features.html">主な機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/require.html">動作要件・環境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/caution.html">注意・FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/ui.html">画面の各機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/autoevent.html">自動追加カード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/category.html">カテゴリ設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/character.html">キャラクター設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/school.html">教育課程設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/event.html">イベント設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/periodEvent.html">期間イベント設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/aboutErrors.html">データエラー対処法</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Character Database:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタートガイド</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">画面の各機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1. ファイル読み込み画面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#characterdetails">2. キャラクタ詳細画面</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.1 データテーブル</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">通常時</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">色データ値ホバー時</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.2 タイムラインテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.3. レーダーチャート</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#datacompare">3. データ比較画面</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">3.1. 集計対象未選択時</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">3.2. 集計対象選択時</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">3.3. レーダーチャート表示時</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">データ設定</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../info/update.html">アップデート情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/files.html">ファイル情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info/internal.html">内部処理について</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/shi-chikuzen/chronicliner">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Chronicliner</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">画面の各機能</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/source/characterDatabase/ui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>画面の各機能<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
+<section id="id2">
+<h2>1. ファイル読み込み画面<a class="headerlink" href="#id2" title="この見出しへのパーマリンク"></a></h2>
+<img alt="ファイル読み込み画面" src="../../_images/cusage_0.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>フォルダアイコン</p></td>
+<td><p>クリック</p></td>
+<td><p>読み込むファイルを指定する</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>ファイルタブ</p></td>
+<td><p>クリック</p></td>
+<td><p>ファイル読み込み画面を開く</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>キャラクタタブ</p></td>
+<td><p>クリック</p></td>
+<td><p><a class="reference internal" href="#characterdetails"><span class="std std-ref">キャラクタ詳細画面</span></a> を開く</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>比較タブ</p></td>
+<td><p>クリック</p></td>
+<td><p><a class="reference internal" href="#datacompare"><span class="std std-ref">データ比較画面</span></a> を開く</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="characterdetails">
+<span id="id3"></span><h2>2. キャラクタ詳細画面<a class="headerlink" href="#characterdetails" title="この見出しへのパーマリンク"></a></h2>
+<section id="id4">
+<h3>2.1 データテーブル<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h3>
+<section id="id5">
+<h4>通常時<a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h4>
+<img alt="データテーブル通常時" src="../../_images/cusage_1_1.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>キャラクタ選択タブ</p></td>
+<td><p>クリック</p></td>
+<td><p>表示するキャラクタを選択する</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>表示データ選択タブ</p></td>
+<td><p>クリック</p></td>
+<td><p>表示データを切り替える</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>データテーブルヘッダー</p></td>
+<td><p>クリック</p></td>
+<td><p>列名をクリックすると当該列の値でソートする</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>データ集約行</p></td>
+<td></td>
+<td><p>キャラクタに登録されたデータをデータ型で分けて表示する</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>データ集約解除ボタン</p></td>
+<td><p>クリック</p></td>
+<td><p>データ型でのデータ集約を解除する</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>データテーブル</p></td>
+<td></td>
+<td><div class="line-block">
+<div class="line">登録されたデータを表示する</div>
+<div class="line">項目名をクリックすると比較タブの該当項目ページに遷移する</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>表示行数変更セレクター</p></td>
+<td><p>クリック</p></td>
+<td><p>1ページに表示するデータ数を選択する</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>ページ変更ボタン</p></td>
+<td><p>クリック</p></td>
+<td><p>前後ページのデータを表示する</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>画像表示領域</p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">img</span></code> 型で登録された画像を表示する</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>左ボタン</p></td>
+<td><p>クリック</p></td>
+<td><p>前の画像を表示する</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>右ボタン</p></td>
+<td><p>クリック</p></td>
+<td><p>次の画像を表示する</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>画像一覧</p></td>
+<td><p>クリック</p></td>
+<td><p>クリックした画像を画像表示領域に表示する</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h4>色データ値ホバー時<a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h4>
+<img alt="データテーブルホバー時" src="../../_images/cusage_1_2.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>色チップ</p></td>
+<td><p>ホバー</p></td>
+<td><p>マウスオーバーするとカラーピッカーを表示する</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>カラーピッカー</p></td>
+<td></td>
+<td><p>登録された色の詳細を表示する</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id7">
+<h3>2.2 タイムラインテーブル<a class="headerlink" href="#id7" title="この見出しへのパーマリンク"></a></h3>
+<p>Chroniclinerに年表データが読み込まれており、かつ該当名のキャラクタが年表データ内に存在した場合のみ、テーブルが表示されます。
+ただし、データの読み込み順を考慮する必要はありません。</p>
+<img alt="タイムラインテーブル" src="../../_images/cusage_2.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>タイムラインテーブルヘッダー</p></td>
+<td><p>クリック</p></td>
+<td><p>列名をクリックすると当該列の値でソートする</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>タイムラインテーブル</p></td>
+<td></td>
+<td><p>該当するキャラクタの年表データを表示する</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h3>2.3. レーダーチャート<a class="headerlink" href="#id8" title="この見出しへのパーマリンク"></a></h3>
+<p>データ形式が <code class="docutils literal notranslate"><span class="pre">graph</span></code> で登録されたデータを使用し、レーダーチャートを作成・表示します。</p>
+<img alt="レーダーチャート" src="../../_images/cusage_3.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>レーダーチャート表示領域</p></td>
+<td></td>
+<td><p>レーダーチャートを表示する</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>ポイント</p></td>
+<td><p>ホバー</p></td>
+<td><p>マウスオーバーするとデータの値をポップアップで表示する</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="datacompare">
+<span id="id9"></span><h2>3. データ比較画面<a class="headerlink" href="#datacompare" title="この見出しへのパーマリンク"></a></h2>
+<section id="id10">
+<h3>3.1. 集計対象未選択時<a class="headerlink" href="#id10" title="この見出しへのパーマリンク"></a></h3>
+<img alt="未選択" src="../../_images/cusage_4.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>データ項目選択タブ</p></td>
+<td><p>クリック</p></td>
+<td><p>表示するデータ項目を選択する</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>レーダーチャート表示ボタン</p></td>
+<td><p>クリック</p></td>
+<td><p>右側集計表をレーダーチャート表示に切り替える</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>比較テーブルヘッダー</p></td>
+<td><p>クリック</p></td>
+<td><p>列名をクリックすると当該列の値でソートする</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>比較テーブル</p></td>
+<td><p>クリック</p></td>
+<td><div class="line-block">
+<div class="line">タブで選択された項目が登録されたキャラクタとその値を一覧表示する</div>
+<div class="line">キャラクタ名をクリックするとキャラクタ詳細ページに遷移する</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>集計データ選択セレクタ</p></td>
+<td><p>クリック</p></td>
+<td><div class="line-block">
+<div class="line">比較したいデータ項目を3つまで選択する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">category</span></code> 、 <code class="docutils literal notranslate"><span class="pre">caption</span></code> 、 <code class="docutils literal notranslate"><span class="pre">img</span></code> のデータは選択対象外</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id11">
+<h3>3.2. 集計対象選択時<a class="headerlink" href="#id11" title="この見出しへのパーマリンク"></a></h3>
+<p>集計データ選択セレクタで比較したい項目を3つまで選択することで、各キャラクタに登録された値を比較することができます。選択された項目がすべて存在しないキャラクタの表示は省略されます。</p>
+<img alt="選択時" src="../../_images/cusage_5.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>項目1表示領域</p></td>
+<td></td>
+<td><p>項目1に登録されたデータをグループ化して表示する</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>項目2表示列</p></td>
+<td></td>
+<td><div class="line-block">
+<div class="line">項目2に登録されたデータを表示する</div>
+<div class="line">ソートのメインキーになる</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>項目3表示列</p></td>
+<td></td>
+<td><div class="line-block">
+<div class="line">項目3に登録されたデータを表示する</div>
+<div class="line">ソートのサブキーになる</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id12">
+<h3>3.3. レーダーチャート表示時<a class="headerlink" href="#id12" title="この見出しへのパーマリンク"></a></h3>
+<p>各キャラクタに登録された <code class="docutils literal notranslate"><span class="pre">graph</span></code> 形式データをレーダーチャートで表示します。ある項目が登録されたキャラクタと登録されていないキャラクタが存在する場合、登録されていないキャラクタの当該項目のポイントは表示されません。</p>
+<img alt="レーダーチャート表示時" src="../../_images/cusage_6.png" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>使用方法</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>集計表表示ボタン</p></td>
+<td><p>クリック</p></td>
+<td><p>右側レーダーチャートをデータ集計表表示に切り替える</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>キャラクタ凡例</p></td>
+<td><p>クリック</p></td>
+<td><p>キャラクタの表示・非表示を切り替える</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>レーダーチャート表示領域</p></td>
+<td></td>
+<td><p>レーダーチャートを表示する</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="クイックスタートガイド" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="data.html" class="btn btn-neutral float-right" title="データ設定" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, shi_chikuzen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
