@@ -20,7 +20,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="データエラー対処法" href="../info/aboutErrors.html" />
+    <link rel="next" title="フラグイベント設定方法" href="flagEvent.html" />
     <link rel="prev" title="イベント設定" href="event.html" /> 
 </head>
 
@@ -64,17 +64,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#categoryep">カテゴリ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#titlep">タイトル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#startdate">開始日時</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enddate">開始日時</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enddate">終了日時</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#limitp">以下を無視</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#display">経過時間粒度</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#startdetail">開始時詳細</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enddetail">終了時詳細</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#impevp">重要イベント</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tagevperiod">タグ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flagidperiod">フラグID</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="flagEvent.html">フラグイベント設定方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../info/aboutErrors.html">データエラー対処法</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Character Database:</span></p>
@@ -148,7 +150,7 @@
 <td><p>イベントの開始日時を設定する</p></td>
 <td><p>1990/1/1 15:00</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#enddate"><span class="std std-ref">開始日時</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enddate"><span class="std std-ref">終了日時</span></a></p></td>
 <td><p>必須</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span> <span class="pre">hh:mm</span></code> 形式の日時、 <code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span></code> 形式の日付</p></td>
 <td><p>イベントの終了日時を設定する</p></td>
@@ -190,6 +192,12 @@
 <td><p>イベントのタグを設定する</p></td>
 <td><p>#主人公3人組 #不死鳥の騎士団</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#flagidperiod"><span class="std std-ref">フラグID</span></a></p></td>
+<td><p>任意</p></td>
+<td><p>文字列</p></td>
+<td><p>フラグイベントのIDを設定する</p></td>
+<td><p>flag1</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -214,7 +222,7 @@
 </div>
 </section>
 <section id="enddate">
-<span id="id7"></span><h3>開始日時<a class="headerlink" href="#enddate" title="この見出しへのパーマリンク"></a></h3>
+<span id="id7"></span><h3>終了日時<a class="headerlink" href="#enddate" title="この見出しへのパーマリンク"></a></h3>
 <p>該当イベントの終了年、月、日、時、分を設定します。</p>
 <p>年月日以下の粒度のデータが必要ない場合は <code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span></code> 形式、必要な場合は <code class="docutils literal notranslate"><span class="pre">yyyy/MM/dd</span> <span class="pre">hh:mm</span></code> 形式で指定してください。</p>
 <div class="admonition note">
@@ -290,6 +298,11 @@
 <span id="id13"></span><h3>タグ<a class="headerlink" href="#tagevperiod" title="この見出しへのパーマリンク"></a></h3>
 <p>該当期間イベントのタグを設定します。半角の <code class="docutils literal notranslate"><span class="pre">#</span></code> をつけた形式で記載してください。</p>
 </section>
+<section id="flagidperiod">
+<span id="id"></span><h3>フラグID<a class="headerlink" href="#flagidperiod" title="この見出しへのパーマリンク"></a></h3>
+<p>該当フラグのIDを設定します。ここでIDを指定すると、開始日時から終了日時までをフラグ回収可能期間としたフラグイベントとして扱われます。</p>
+<p>同一フラグIDをもつ単一イベントをイベントシートに追加すると、当該イベントが開始日時から終了日時までに発生した場合、イベント設定先のキャラクタのフラグが回収されたと見做します。フラグに対してフラグ回収したキャラクターが全員ではない、ないし異なる、ないし回収が行われていない場合、フラグ未回収カードが追加されます。</p>
+</section>
 </section>
 </section>
 
@@ -298,7 +311,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="event.html" class="btn btn-neutral float-left" title="イベント設定" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../info/aboutErrors.html" class="btn btn-neutral float-right" title="データエラー対処法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="flagEvent.html" class="btn btn-neutral float-right" title="フラグイベント設定方法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

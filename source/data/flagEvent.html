@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>カテゴリ設定 &mdash; Chronicliner 2.0.0 ドキュメント</title>
+  <title>フラグイベント設定方法 &mdash; Chronicliner 2.0.0 ドキュメント</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="キャラクター設定" href="character.html" />
-    <link rel="prev" title="自動追加カード" href="../usage/autoevent.html" /> 
+    <link rel="next" title="データエラー対処法" href="../info/aboutErrors.html" />
+    <link rel="prev" title="期間イベント設定" href="periodEvent.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,20 +54,25 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage/ui.html">画面の各機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/autoevent.html">自動追加カード</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">カテゴリ設定</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">1. 概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">2. 各設定項目</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#categoryname">カテゴリ名</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#categorycolor">カテゴリ色</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">カテゴリ設定</a></li>
 <li class="toctree-l1"><a class="reference internal" href="character.html">キャラクター設定</a></li>
 <li class="toctree-l1"><a class="reference internal" href="school.html">教育課程設定</a></li>
 <li class="toctree-l1"><a class="reference internal" href="event.html">イベント設定</a></li>
 <li class="toctree-l1"><a class="reference internal" href="periodEvent.html">期間イベント設定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flagEvent.html">フラグイベント設定方法</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">フラグイベント設定方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1. 概要</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.1. 設定可能カテゴリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.2. フラグ回収・未回収時の挙動</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">2. 設定方法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.1. フラグ回収可能期間設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.2. フラグ回収設定</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">3. 特記事項</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../info/aboutErrors.html">データエラー対処法</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Character Database:</span></p>
@@ -98,9 +103,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">カテゴリ設定</li>
+      <li class="breadcrumb-item active">フラグイベント設定方法</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/source/data/category.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/source/data/flagEvent.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -109,58 +114,36 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>カテゴリ設定<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
-<p>Excelファイルの <code class="docutils literal notranslate"><span class="pre">カテゴリ</span></code> シートを使用し、各キャラクターが所属するカテゴリの設定を行います。</p>
+<h1>フラグイベント設定方法<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
+<p>Excelファイルの <code class="docutils literal notranslate"><span class="pre">イベント</span></code> 、 <code class="docutils literal notranslate"><span class="pre">期間イベント</span></code> シートを使用し、イベントの設定を行います。</p>
 <section id="id2">
 <h2>1. 概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク"></a></h2>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>カラム名</p></th>
-<th class="head"><p>設定</p></th>
-<th class="head"><p>使用可能な値</p></th>
-<th class="head"><p>概要</p></th>
-<th class="head"><p>設定例</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="#categoryname"><span class="std std-ref">カテゴリ名</span></a></p></td>
-<td><p>必須</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">all</span></code> 、 <code class="docutils literal notranslate"><span class="pre">summary</span></code> 以外の文字列</p></td>
-<td><p>各キャクターが所属するカテゴリの名前</p></td>
-<td><p>レイブンクロー</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#categorycolor"><span class="std std-ref">カテゴリ色</span></a></p></td>
-<td><p>任意</p></td>
-<td><p>カラーコード、RGB値</p></td>
-<td><p>該当カテゴリの色</p></td>
-<td><p>#00aeb9</p></td>
-</tr>
-</tbody>
-</table>
-</section>
+<p>フラグイベントは、期間イベント機能とイベント機能の両方を使用し、「フラグ回収可能期間」と「フラグ回収」をセットで登録するための機能です。</p>
 <section id="id3">
-<h2>2. 各設定項目<a class="headerlink" href="#id3" title="この見出しへのパーマリンク"></a></h2>
-<section id="categoryname">
-<span id="id4"></span><h3>カテゴリ名<a class="headerlink" href="#categoryname" title="この見出しへのパーマリンク"></a></h3>
-<p>各キャラクターが所属するカテゴリの名称を設定します。</p>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>カテゴリとキャラクターには同一名称を使用できません</p>
-</div>
+<h3>1.1. 設定可能カテゴリ<a class="headerlink" href="#id3" title="この見出しへのパーマリンク"></a></h3>
+<p>キャラクター、カテゴリ、タグが使用可能です。複数名のキャラクターが対象となる設定を行った場合、フラグ回収可能期間開始と回収可能期間終了の判定は <strong>各キャラクタに対し</strong> 行われます。</p>
+<p>例えば、3人のキャラクターが含まれるカテゴリに対しフラグ回収可能期間を設定し、そのうちの1人に回収可能期間内の回収イベントを設定した場合、その1人のみがフラグを回収したと見做され、ほか2人にはフラグ未回収イベントが付与されます。</p>
 </section>
-<section id="categorycolor">
-<span id="id5"></span><h3>カテゴリ色<a class="headerlink" href="#categorycolor" title="この見出しへのパーマリンク"></a></h3>
-<p>該当カテゴリのカテゴリー行、及びイベントカードに使用される背景色を指定します。</p>
-<p>色名には以下の書式が設定可能です。</p>
-<ul class="simple">
-<li><p>カラーコード - (ex: <code class="docutils literal notranslate"><span class="pre">#abcefg</span></code>)</p></li>
-<li><p>RGB形式 - (ex: <code class="docutils literal notranslate"><span class="pre">rgb(100,</span> <span class="pre">200,</span> <span class="pre">255)</span></code>)</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>カテゴリー行・イベントカードの文字色は白色になるため、薄い色を指定すると文字が読めなくなる可能性があります</p>
-</div>
+<section id="id4">
+<h3>1.2. フラグ回収・未回収時の挙動<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h3>
+<p>フラグ回収可能期間の開始イベントは、すべての対象キャラクタに表示されます。回収可能期間内にフラグ回収イベントが設定されたキャラクターには、フラグ回収イベントが表示されます。フラグ回収イベントが設定されていないキャラクターには、回収可能期間終了時にフラグ未回収イベントが表示されます。</p>
+<p>また、フラグ未回収イベントと対象キャラクターについては、画面上部のフラグ未回収アイコンから確認可能です。</p>
 </section>
+</section>
+<section id="id5">
+<h2>2. 設定方法<a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h2>
+<section id="id6">
+<h3>2.1. フラグ回収可能期間設定<a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">期間イベント</span></code> シートを使用します。カテゴリ列にはフラグ回収対象となるカテゴリ、開始日時列はフラグ回収が可能になった日時、終了日時列にはフラグ回収が不可能になる日時を設定してください。また、フラグID列には回収イベントに付与するのと同一となる一意の文字列を設定してください。</p>
+</section>
+<section id="id7">
+<h3>2.2. フラグ回収設定<a class="headerlink" href="#id7" title="この見出しへのパーマリンク"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">イベント</span></code> シートを使用します。カテゴリ列にはフラグ回収を行うカテゴリ、日時列にはフラグ回収を行う日時を設定してください。フラグID列には、回収可能対象となる期間イベントに付与したものと同一のフラグIDを設定してください。</p>
+</section>
+</section>
+<section id="id8">
+<h2>3. 特記事項<a class="headerlink" href="#id8" title="この見出しへのパーマリンク"></a></h2>
+<p>フラグイベントの回収可能期間設定のカードには、日付下に「期間」ではなく「フラグ」が表示されます。また、イベントカードフラグイベントのイベントカードをホバーすると、詳細欄上部にフラグIDが表示されます。</p>
 </section>
 </section>
 
@@ -168,8 +151,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../usage/autoevent.html" class="btn btn-neutral float-left" title="自動追加カード" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="character.html" class="btn btn-neutral float-right" title="キャラクター設定" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="periodEvent.html" class="btn btn-neutral float-left" title="期間イベント設定" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../info/aboutErrors.html" class="btn btn-neutral float-right" title="データエラー対処法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

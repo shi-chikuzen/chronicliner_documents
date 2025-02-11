@@ -68,6 +68,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#detail">詳細</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#impev">重要イベント</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tagev">タグ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flagidev">フラグID</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id12">3. 特記事項</a><ul>
@@ -77,6 +78,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="periodEvent.html">期間イベント設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flagEvent.html">フラグイベント設定方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../info/aboutErrors.html">データエラー対処法</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Character Database:</span></p>
@@ -180,6 +182,12 @@
 <td><p>イベントのタグを設定する</p></td>
 <td><p>#主人公3人組 #不死鳥の騎士団</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#flagidev"><span class="std std-ref">フラグID</span></a></p></td>
+<td><p>任意</p></td>
+<td><p>文字列</p></td>
+<td><p>フラグイベントのIDを設定する</p></td>
+<td><p>flag1</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -267,6 +275,11 @@
 <section id="tagev">
 <span id="id11"></span><h3>タグ<a class="headerlink" href="#tagev" title="この見出しへのパーマリンク"></a></h3>
 <p>該当イベントのタグを設定します。半角の <code class="docutils literal notranslate"><span class="pre">#</span></code> をつけた形式で記載してください。</p>
+</section>
+<section id="flagidev">
+<span id="id"></span><h3>フラグID<a class="headerlink" href="#flagidev" title="この見出しへのパーマリンク"></a></h3>
+<p>該当フラグのIDを設定します。ここでIDを指定すると、期間イベントシートに設定したフラグイベントの回収イベントとして扱われます。</p>
+<p>同一フラグIDをもつ期間イベントに対し、当該イベントが開始日時から終了日時までに発生した場合、当該イベントのキャラクタのフラグが回収されたと見做します。フラグに対してフラグ回収したキャラクターが全員ではない、ないし異なる、ないし回収が行われていない場合、フラグ未回収カードが追加されます。</p>
 </section>
 </section>
 <section id="id12">
